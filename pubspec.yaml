@@ -1,0 +1,25 @@
+name: aion2_unpacker
+description: AION2 游戏资源解包工具 - 支持 UE5.3 IoStore (.pak/.utoc/.ucas)
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.12.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  file_picker: ^8.1.7
+  path: ^1.9.1
+  provider: ^6.1.2
+  shared_preferences: ^2.3.5
+  url_launcher: ^6.3.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
