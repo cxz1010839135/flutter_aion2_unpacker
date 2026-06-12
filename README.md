@@ -45,7 +45,20 @@ cd flutter_aion2_unpacker
 | 可运行目录 | `dist/aion2_unpacker_win64/` |
 | 压缩包 | `dist/aion2_unpacker_win64_v1.0.0.zip` |
 
-将 `dist/aion2_unpacker_win64/` 整个文件夹复制到其他电脑即可运行，首次使用请运行其中的 `install_tools.bat`。
+将 `dist/aion2_unpacker_win64/` 整个文件夹（或 ZIP）复制到新电脑即可运行。
+
+**已内置 retoc + repak**，解压后打开 EXE 即可使用，无需联网、无需点「一键安装依赖」。
+
+目录结构：
+
+```
+aion2_unpacker_win64/
+  aion2_unpacker.exe
+  tools/
+    retoc/retoc.exe
+    repak/repak.exe
+  install_tools.bat   # 可选，用于更新工具版本
+```
 
 > 若项目路径含中文，脚本会自动创建英文 junction 路径（`D:\Adroid_ws\LpRobt_Flutter\aion2_unpacker`）再编译，与 `run_windows.bat` 行为一致。
 

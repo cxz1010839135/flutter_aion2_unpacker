@@ -101,6 +101,11 @@ class AppState extends ChangeNotifier {
 
     await _loadToolPathsFromConfig();
 
+    // 应用内置/配置文件中的工具路径到运行时服务
+    _toolService.retocPath = _settings.retocPath;
+    _toolService.repakPath = _settings.repakPath;
+    _toolService.unrealPakPath = _settings.unrealPakPath;
+
     if (_gamePath == null) {
       _gamePath = await ContainerScanner.detectGamePath();
       if (_gamePath != null) {

@@ -407,13 +407,22 @@ class _SettingsPanelState extends State<SettingsPanel> {
   }
 
   String? _findInstallScript() {
+    final roots = <String>{
+      File(Platform.resolvedExecutable).parent.path,
+      Directory.current.path,
+    };
+
     var dir = Directory.current;
     for (var i = 0; i < 6; i++) {
-      final bat = File('${dir.path}${Platform.pathSeparator}install_tools.bat');
-      if (bat.existsSync()) return bat.path;
+      roots.add(dir.path);
       final parent = dir.parent;
       if (parent.path == dir.path) break;
       dir = parent;
+    }
+
+    for (final root in roots) {
+      final bat = File('$root${Platform.pathSeparator}install_tools.bat');
+      if (bat.existsSync()) return bat.path;
     }
     return null;
   }

@@ -17,7 +17,8 @@ param(
 $ErrorActionPreference = 'Stop'
 
 $ProjectRoot = Split-Path -Parent $PSScriptRoot
-if (-not (Test-Path (Join-Path $ProjectRoot 'pubspec.yaml'))) {
+if (-not (Test-Path (Join-Path $ProjectRoot 'pubspec.yaml')) -and
+    -not (Test-Path (Join-Path $ProjectRoot 'tools'))) {
     $ProjectRoot = $PSScriptRoot
 }
 
